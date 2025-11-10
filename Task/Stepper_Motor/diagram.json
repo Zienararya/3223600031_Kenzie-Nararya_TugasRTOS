@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp1",
+      "top": 604.62,
+      "left": -158.63,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": 531.61,
+      "left": -373.97,
+      "attrs": { "size": "17" }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv1",
+      "top": 753.6,
+      "left": -321.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 711.16, "left": -355.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 720, "left": -336.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led3:A", "esp:4", "green", [ "v0" ] ],
+    [ "led2:A", "esp:5", "green", [ "v0", "h9.6", "v-38.4" ] ],
+    [ "led1:A", "esp:6", "green", [ "v0", "h9.6", "v-86.4" ] ],
+    [ "esp:GND.1", "led1:C", "black", [ "h-115.25", "v-67.2" ] ],
+    [ "esp:GND.1", "led2:C", "black", [ "h-115.25", "v-124.8" ] ],
+    [ "esp:GND.1", "led3:C", "black", [ "h-115.25", "v-182.4" ] ],
+    [ "esp:5V", "drv1:VMOT", "red", [ "h-201.65", "v-105.6" ] ],
+    [ "drv1:GND.2", "esp:GND.1", "black", [ "h9.75", "v86.48" ] ],
+    [ "drv1:VDD", "esp:3V3.1", "red", [ "h192.15", "v-143.92" ] ],
+    [ "drv1:GND.1", "esp:GND.1", "black", [ "v0" ] ],
+    [ "drv1:DIR", "esp:15", "green", [ "h220.8", "v-86.4" ] ],
+    [ "drv1:STEP", "esp:16", "green", [ "h230.4", "v-67.2" ] ],
+    [ "drv1:ENABLE", "esp:17", "green", [ "h0" ] ],
+    [ "drv1:2B", "stepper1:A-", "green", [ "v0" ] ],
+    [ "drv1:2A", "stepper1:A+", "green", [ "v0" ] ],
+    [ "drv1:1A", "stepper1:B+", "green", [ "v0" ] ],
+    [ "drv1:1B", "stepper1:B-", "green", [ "v0" ] ],
+    [ "vcc1:VCC", "drv1:VMOT", "red", [ "v0" ] ],
+    [ "gnd1:GND", "drv1:GND.2", "black", [ "v0", "h9.6" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "green", [ "v9.8", "h-9.2" ] ],
+    [ "drv1:GND.1", "esp1:GND.1", "black", [ "h0.48", "v-9.55", "h19.2", "v76.8" ] ],
+    [ "drv1:VDD", "esp1:3V3.1", "green", [ "v-67.15", "h67.68", "v-67.2", "h48" ] ],
+    [ "drv1:DIR", "esp1:8", "green", [ "v0.2", "h29.2", "v-76.8" ] ],
+    [ "drv1:STEP", "esp1:9", "green", [ "v9.8", "h48.4", "v-57.6" ] ],
+    [ "drv1:ENABLE", "esp1:10", "green", [ "v19.4", "h115.6", "v-57.6" ] ]
+  ],
+  "dependencies": {}
+}
