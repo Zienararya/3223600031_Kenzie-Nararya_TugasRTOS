@@ -1,4 +1,4 @@
-# LED Button Oled Reading di Wokwi
+# Buzzer Encoder di Wokwi
 
 ## Setup Proyek di Wokwi
 
