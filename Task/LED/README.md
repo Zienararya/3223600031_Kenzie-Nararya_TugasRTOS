@@ -1,4 +1,4 @@
-# LED Traffic Light dengan RTOS di Wokwi
+# LED Traffic Light di Wokwi
 
 ## Setup Proyek di Wokwi
 
