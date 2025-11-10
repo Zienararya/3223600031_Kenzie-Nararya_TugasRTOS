@@ -8,4 +8,4 @@
 
 ## Daftar Isi
 
-- [Tugas 1: IO ESP32 ](/Task/README.md)
+- [Tugas 1: IO ESP32 TASKING ](/Task/README.md)
